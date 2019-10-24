@@ -4,7 +4,12 @@ import Login from './Login';
 import { Auth } from 'aws-amplify';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setCurrentUser, toggleLogin, toggleSignUp } from '../actions/actions';
+import {
+  setCurrentUser,
+  hideAuthForms,
+  toggleLogin,
+  toggleSignUp
+} from '../actions/actions';
 
 class Nav extends Component {
   logout = () => {
@@ -12,6 +17,7 @@ class Nav extends Component {
       .then(() => console.log('Signed out'))
       .catch(err => console.log(err));
     this.props.setCurrentUser(null);
+    this.props.hideAuthForms();
   };
 
   render() {
@@ -50,5 +56,5 @@ const mapStateToProps = state => state;
 
 export default connect(
   mapStateToProps,
-  { setCurrentUser, toggleLogin, toggleSignUp }
+  { setCurrentUser, hideAuthForms, toggleLogin, toggleSignUp }
 )(Nav);

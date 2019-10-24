@@ -58,10 +58,9 @@ class Signup extends Component {
         email: '',
         code: ''
       });
+      this.props.hideAuthForms();
     }
-
     this.props.setCurrentUser(username);
-    this.props.hideAuthForms();
   };
 
   render() {
