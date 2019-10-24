@@ -1,0 +1,15 @@
+{
+	"auth": {
+		"blog9eb881cd": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"storage": {
+		"blog2330": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
